@@ -327,37 +327,6 @@ nav a
 }
 
 /*
-  The navigation arrows
-*/
-
-a.next,
-a.prev
-{
-    position: sticky;
-    z-index: 1000;
-    bottom: .2em;
-
-    display: none;
-
-    width: 2ch;
-    height: 2ch;
-    padding: .3em .6em;
-
-    border-radius: .3em;
-    background: #223e8bdb;
-}
-
-a.next
-{
-    top: 0;
-}
-a.prev
-{
-    top: 0;
-}
-
-
-/*
   ███████  ██████ ██████   ██████  ██      ██      ██████   █████  ██████
   ██      ██      ██   ██ ██    ██ ██      ██      ██   ██ ██   ██ ██   ██
   ███████ ██      ██████  ██    ██ ██      ██      ██████  ███████ ██████

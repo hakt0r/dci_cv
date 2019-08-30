@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/346e7f28b3.js"></script>
+  <script src="js/index.js"></script>
 </head>
 <body>
   <img id="background_more" src="img/more.png">
@@ -13,12 +14,14 @@
 
   <nav>
     <ul>
-      <li><a title="home" class=active href="#overview"><i class="fa fa-home"></i></a></li>
-      <li><a title="about me" href="#person"><i class="fa fa-user"></i></a></li>
-      <li><a title="skills" href="#skills"><i class="fa fa-dumbbell"></i></a></li>
-      <li><a title="development" href="#dev"><i class="fa fa-code"></i></a></li>
-      <li><a title="history" href="#history"><i class="fa fa-history"></i></a></li>
-      <li><a title="contact" href="#contact"><i class="fa fa-envelope"></i></a></li>
+      <li><a title="previous" class=prev><i class="fa fa-arrow-left"></i></a></li>
+      <li><a title="home" class="navi active" href="#overview"><i class="fa fa-home"></i></a></li>
+      <li><a title="about me" class=navi href="#person"><i class="fa fa-user"></i></a></li>
+      <li><a title="skills" class=navi href="#skills"><i class="fa fa-dumbbell"></i></a></li>
+      <li><a title="development" class=navi href="#dev"><i class="fa fa-code"></i></a></li>
+      <li><a title="history" class=navi href="#history"><i class="fa fa-history"></i></a></li>
+      <li><a title="contact" class=navi href="#contact"><i class="fa fa-envelope"></i></a></li>
+      <li><a title="next" class=next><i class="fa fa-arrow-right"></i></a></li>
     </ul>
   </nav>
 
@@ -31,7 +34,6 @@
   -->
 
   <div class=slide id=overview>
-    <a class=next href="#person"><i class="fa fa-arrow-right"></i></a>
     <h1>
       Sebastian Glaser
       <sub>Consulting.Development.Design</sub>
@@ -95,8 +97,6 @@
   -->
 
   <div class=slide id=person>
-    <a class=prev href="#overview"><i class="fa fa-arrow-left"></i></a>
-    <a class=next href="#skills"><i class="fa fa-arrow-right"></i></a>
     <h4>About me</h4>
     <p>I am an autodidact digital native, familiar with a variety of platforms, programming languages and their respective security aspects.</p>
     <p>In the course of my 20 years of experience with web applications, I have dealt with vulnerabilities, exploitation, social engineering, attack scenarios, migitation and suppression vectors.</p>
@@ -114,8 +114,6 @@
   -->
 
   <div class=slide id=skills>
-    <a class=prev href="#person"><i class="fa fa-arrow-left"></i></a>
-    <a class=next href="#dev"><i class="fa fa-arrow-right"></i></a>
 
     <skills>
       <h4>Strengths</h4>
@@ -169,8 +167,6 @@
   -->
 
   <div class=slide id=dev>
-    <a class=prev href="#skills"><i class="fa fa-arrow-left"></i></a>
-    <a class=next href="#history"><i class="fa fa-arrow-right"></i></a>
 
     <skills class="full">
       <h4>Coding</h4>
@@ -205,8 +201,6 @@
   -->
 
   <div class=slide id=history>
-    <a class=next href="#contact"><i class="fa fa-arrow-right"></i></a>
-    <a class=prev href="#dev"><i class="fa fa-arrow-left"></i></a>
     <h4>Positions</h4>
     <div class=job>
       <span class=date>2014-2019</span> <a href="#job0">Sebastian Glaser, Monheim am Rhein</a>
@@ -246,7 +240,6 @@
   -->
 
   <div class="slide job" id="job0">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2014-2019</span> <h4>Sebastian Glaser, Monheim am Rhein</h4>
     <subscript>Development, Consulting, Research</subscript>
     <subscript>Self-employed</subscript>
@@ -260,7 +253,6 @@
   </div>
 
   <div class="slide job" id="job1">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2018-2019</span> <h4>kasualevents, Monheim am Rhein</h4>
     <subscript>Chief Technology Officer / Architect</subscript>
     <subscript>Start-up</subscript>
@@ -270,7 +262,6 @@
   </div>
 
   <div class="slide job" id="job2">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2007-2014</span> <h4>hakt0r root services, Bonn</h4>
     <subscript>Software Developer / Hosting / Consulting</subscript>
     <subscript>Self-employed</subscript>
@@ -284,7 +275,6 @@
   </div>
 
   <div class="slide job" id="job3">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2011-2012</span> <h4>Taktsoft GmbH, Bonn</h4>
     <subscript>Software Developer, Senior (RUBY,LAMP,JS)</subscript>
     <subscript>Sofware-vendor, specializing in web-solutions</subscript>
@@ -295,7 +285,6 @@
   </div>
 
   <div class="slide job" id="job4">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2009-2011</span> <h4>CBT, Bonn</h4>
     <subscript>Software Developer, Senior / Integration / Reverse</subscript>
     <subscript>Medical laboratory</subscript>
@@ -310,21 +299,18 @@
   </div>
 
   <div class="slide job" id="job5">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2008</span> <h4>xtivate, Ilmenau</h4>
     <subscript>Software Developer, Senior (LAMP)</subscript>
     <subscript>Onlineshop for networking und storage solutions</subscript>
   </div>
 
   <div class="slide job" id="job6">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2007</span> <h4>Hundertelf GmbH, Cologne</h4>
     <subscript>Software Developer, Senior (LAMP) / Consultant</subscript>
     <subscript>Media and internet agency</subscript>
   </div>
 
   <div class="slide job" id="job7">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2005-2007</span> <h4>GRAVIS Store, Bonn</h4>
     <subscript>Sales and Service</subscript>
     <subscript>GRAVIS Computervertriebs GmbH, Berlin</subscript>
@@ -335,14 +321,12 @@
   </div>
 
   <div class="slide job" id="job8">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>2000-2003</span> <h4>Axel Isensee, Sankt Augustin</h4>
     <subscript>Software Developer, Junior / Designer</subscript>
     <subscript>Websites, Design und Promotion</subscript>
   </div>
 
   <div class="slide job" id="job9">
-    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
     <span class=date>1998-2003</span> <h4>Syanterra - neue Medien GbR</h4>
     <subscript>Software Developer, Junior / Designer / Security</subscript>
     <subscript>Self-employed</subscript>
@@ -363,7 +347,6 @@
   -->
 
   <div class=slide id=contact>
-    <a class=next href="#history"><i class="fa fa-arrow-left"></i></a>
     <h4>contact</h4>
     <div class="flex_row">
       <div class="flex_left">

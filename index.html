@@ -1,0 +1,392 @@
+<!DOCTYPE html><!-- HTML5 - use Doctype for compatibility -->
+<html>
+<head>
+  <title>Sebastian Glaser</title>
+  <meta http-equiv="author" content="anx">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/346e7f28b3.js"></script>
+  <script>
+    if ( ! window.location.toString().match('#') ){ window.location = window.location + '#overview' }
+    window.addEventListener('hashchange',()=>{
+      document.querySelector('.active').classList.remove('active')
+      console.log(`li a[href="${window.location.hash}"]`);
+      document.querySelector(`li a[href="${window.location.hash}"]`).classList.add('active')
+    })
+  </script>
+</head>
+<body>
+  <img id="background_more" src="img/more.png">
+  <img id="background" src="img/code.png">
+
+  <nav>
+    <ul>
+      <li><a class=active href="#overview">Home</a></li>
+      <li><a href="#person">Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#dev">Dev</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--
+  ██   ██  ██████  ███    ███ ███████
+  ██   ██ ██    ██ ████  ████ ██
+  ███████ ██    ██ ██ ████ ██ █████
+  ██   ██ ██    ██ ██  ██  ██ ██
+  ██   ██  ██████  ██      ██ ███████
+  -->
+
+  <div class=slide id=overview>
+    <a class=next href="#person"><i class="fa fa-arrow-right"></i></a>
+    <h1>
+      Sebastian Glaser
+      <sub>Consulting.Development.Design</sub>
+    </h1>
+
+    <section class="personal">
+      <span class="private"><h4>Born</h4></span>
+      <span class="private right"><h4>Family</h4>Daughter (3), single</span>
+    </section>
+
+    <div class="flex_row">
+      <section class="flex_left">
+        <p><b>Senior Developer</b> <span class="label"><i class="fa fa-code"></i></span></p>
+        <p class=dim>
+           Historic stacks up to the blockchain<br>
+           Countless languages/stacks, DevOps<br>
+        </p>
+        <p><b>15+ FOSS projects</b> <a href="https://github.com/hakt0r" class=label><i class="fab fa-github"></i></a> </p>
+
+        <p><b>Architect</b> <span class="label"><i class="fa fa-project-diagram"></i></span></p>
+        <p>Ticket-Presales <a href="https://tix.kasualevents.de/">TIX</a></p>
+
+        <p><b>Project-lead</b> <span class="label"><i class="fa fa-users"></i></span></p>
+        <div class=dim>
+           Video-game <a href="https://nuu.hakt0r.de/">NUU</a><br>
+           PWA-Framework <a href="https://github.com/hakt0r/bundinha">BUNDINHA</a><br>
+           Inventory-App <a href="https://cinv.hktr.de/">CINV</a>
+        </div>
+        <p><b>Security Consultant</b> <span class="label"><i class="fa fa-user-tie"></i></span></p>
+        <div class=dim>
+           Hardware, Software, APIs, Network<br>
+           Pentesting, Reverse-Engineering<br>
+           DevSecOps, SecOps</p>
+        </div>
+      </section>
+
+      <section class="flex_right">
+        <p><span class="label"><i class="fa fa-building"></i></span>       <b>Monheim am Rhein</b></p>
+        <p><span class="label"><i class="fa fa-birthday-cake"></i></span>  <b>1984 in Bonn, Germany</b></p>
+        <p><span class="label"><i class="fa fa-child"></i></span>          <b>Daughter, Unwed</b></p>
+        <p><span class="label double"><i class="fa fa-university"></i></span>     <b>Computer Sciences, 4y<br>Universität Bonn</b></p>
+        <p><span class="label double"><i class="fa fa-graduation-cap"></i></span> <b>Abitur<br>JDCS Königswinter</b></p>
+        <p><span class="label"><i class="fa fa-globe-africa"></i></span>   <b>Languages / Experience</b></p>
+        <skills class=block>
+          <s value=5> German (Native) </s>
+          <s value=5> English </s>
+          <s value=2> Portuguese </s>
+          <s value=3> Developing countries </s>
+          <s value=3> Crisis areas </s>
+        </skills>
+      </section>
+    </div>
+  </div>
+
+  <!--
+  ███    ███ ███████
+  ████  ████ ██
+  ██ ████ ██ █████
+  ██  ██  ██ ██
+  ██      ██ ███████
+  -->
+
+  <div class=slide id=person>
+    <a class=prev href="#overview"><i class="fa fa-arrow-left"></i></a>
+    <a class=next href="#skills"><i class="fa fa-arrow-right"></i></a>
+    <h4>About me</h4>
+    <p>I am an autodidact digital native, familiar with a variety of platforms, programming languages and their respective security aspects.</p>
+    <p>In the course of my 20 years of experience with web applications, I have dealt with vulnerabilities, exploitation, social engineering, attack scenarios, migitation and suppression vectors.</p>
+    <p>I know popular hosting stacks, their operating systems, the kernels, and the hardware layers, complemented with network, VPN and administration experience on the common platforms.
+        <br>As a team leader in various software projects, I have learned to integrate team and clients, as well as to convey complex technical relationships.</p>
+    <p>Structured procedure as a basis for optimal project flow, as well as a friendly and professional tone, are my outstanding characteristics.</p>
+  </div>
+
+  <!--
+  ███████ ██   ██ ██ ██      ██      ███████
+  ██      ██  ██  ██ ██      ██      ██
+  ███████ █████   ██ ██      ██      ███████
+       ██ ██  ██  ██ ██      ██           ██
+  ███████ ██   ██ ██ ███████ ███████ ███████
+  -->
+
+  <div class=slide id=skills>
+    <a class=prev href="#person"><i class="fa fa-arrow-left"></i></a>
+    <a class=next href="#dev"><i class="fa fa-arrow-right"></i></a>
+
+    <skills>
+      <h4>Strengths</h4>
+      <s value=5> <b>Coding</b> <b>Review</b> <b>Administration</b> <b>Security</b> <b>Sales</b> <b>Consulting</b> <b>Improvisation</b> </s>
+      <s value=4> <b>Reverse</b> <b>Documentation</b> <b>Integration</b> <b>Design</b> <b>Team</b> <b>Design-Patterns</b> </s>
+      <s value=3> <b>Comments</b> <b>Tests</b> <b>Agile/SCRUM</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Platforms</h4>
+      <s value=5> <b>Linux</b> <b>Virtualization</b> <b>Cloud</b> </s>
+      <s value=4> <b>Embedded</b> <b>Android</b> <b>MacOS/Server/iOS</b> </s>
+      <s value=3> <b>Windows/Server</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Design</h4>
+      <s value=5> <b>Photoshop</b> <b>Inkscape</b> <b>GIMP</b> <b>SVG</b> </s>
+      <s value=4> <b>QuarkXPress</b> <b>Freehand</b> </s>
+      <s value=3> <b>InDesign</b> <b>Illustrator</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Solid</h4>
+      <s value=5> <b>openSCAD</b> <b>FEMM</b> </s>
+      <s value=4> <b>FreeCAD</b> <b>Spice</b> </s>
+      <s value=3> <b>AutoCAD</b> <b>Cinema4D</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Reversing</h4>
+      <s value=4> <b>Hopper</b> <b>IDA Pro</b> <b>Spice</b> </s>
+      <s value=3> <b>Medusa</b> <b>Papyrus</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Hardware</h4>
+      <s value=5> <b>Prototyping</b> </s>
+      <s value=4> <b>Eyes</b> <b>Mikroscope</b> <b>Multimeter</b> </s>
+      <s value=3> <b>Oscilloscope</b> <b>Soldering</b> <b>Hot-Air</b> </s>
+    </skills>
+
+  </div>
+
+  <!--
+  ██████  ███████ ██    ██
+  ██   ██ ██      ██    ██
+  ██   ██ █████   ██    ██
+  ██   ██ ██       ██  ██
+  ██████  ███████   ████
+  -->
+
+  <div class=slide id=dev>
+    <a class=prev href="#skills"><i class="fa fa-arrow-left"></i></a>
+    <a class=next href="#history"><i class="fa fa-arrow-right"></i></a>
+
+    <skills class="full">
+      <h4>Coding</h4>
+      <s value=5> <b>C/C++</b> <b>VisualBasic</b> <b>sh/bash/make</b> <b>PHP</b> <b>Perl</b> <b>openSCAD</b> <b>Lua</b> <b>LiquidSoap</b> <b>haXe</b> <b>Xojo</b> <b>Gambas</b> <b>HTML/XML/XSLT</b> <b>CSS/SVG</b> <b>JavaScript</b> <b>CoffeeScript</b> <b>Markdown</b> </s>
+      <s value=4> <b>TypeScript</b> <b>Rust</b> <b>Ruby</b> <b>Python</b> <b>Java</b> <b>C#</b> <b>ASM</b> <b>Pascal</b> <b>FileMakerScript</b> <b>GCode</b> </s>
+      <s value=3> <b>Clojure</b> <b>Objective-C</b> <b>D</b> <b>COBOL</b> <b>ActionScript</b> <b>F</b> <b>Haskell</b> <b>Go</b> </s>
+      <s value=2> <b>Swift</b> <b>OCaml</b> <b>Erlang</b> <b>Scala</b> <b>SmallTalk</b> <b>Lisp</b> <b>PowerShell</b> <b>PS</b> <b>APL</b> </s>
+    </skills>
+
+
+    <skills>
+      <h4>Web</h4>
+      <s value=5> <b>nodeJS/MEAN/MERN/MEVN</b> </s>
+      <s value=4> <b>PHP/LAMP/NMP</b> <b>rubyOnRails</b> <b>c/c++</b> <b>haXe</b> <b>WebGL</b> <b>WASM</b> </s>
+      <s value=3> <b>Python/django/twisted</b> <b>haXe</b> </s>
+    </skills>
+
+    <skills>
+      <h4>Databases</h4>
+      <s value=5> <b>SQL</b> <b>MariaDB</b> <b>Oracle</b> <b>DB2</b> <b>pqsql</b> <b>pgsql</b> <b>GraphQL & Co.</b> </s>
+      <s value=4> <b>NoSQL</b> <b>MongoDB</b> <b>CouchDB</b> <b>Embedded</b> <b>UpscaleDB</b> <b>TagScale</b> </s>
+    </skills>
+
+  </div>
+
+  <!--
+  ██   ██ ██ ███████ ████████  ██████  ██████  ██    ██
+  ██   ██ ██ ██         ██    ██    ██ ██   ██  ██  ██
+  ███████ ██ ███████    ██    ██    ██ ██████    ████
+  ██   ██ ██      ██    ██    ██    ██ ██   ██    ██
+  ██   ██ ██ ███████    ██     ██████  ██   ██    ██
+  -->
+
+  <div class=slide id=history>
+    <a class=next href="#contact"><i class="fa fa-arrow-right"></i></a>
+    <a class=prev href="#dev"><i class="fa fa-arrow-left"></i></a>
+    <h4>Positions</h4>
+    <div class=job>
+      <span class=date>2014-2019</span> <a href="#job0">Sebastian Glaser, Monheim am Rhein</a>
+    </div>
+    <div class=job>
+      <span class=date>2018-2019</span> <a href="#job1">kasualevents, Monheim am Rhein</a>
+    </div>
+    <div class=job>
+      <span class=date>2011-2012</span> <a href="#job3">Taktsoft GmbH, Bonn</a>
+    </div>
+    <div class=job>
+      <span class=date>2009-2011</span> <a href="#job4">CBT, Bonn</a>
+    </div>
+    <div class=job>
+      <span class=date>2008</span> <a href="#job5">xtivate, Ilmenau</a>
+    </div>
+    <div class=job>
+      <span class=date>2007</span> <a href="#job6">Hundertelf GmbH, Cologne</a>
+    </div>
+    <div class=job>
+      <span class=date>2005-2007</span> <a href="#job7">GRAVIS Store, Bonn</a>
+    </div>
+    <div class=job>
+      <span class=date>2000-2003</span> <a href="#job8">Axel Isensee, Sankt Augustin</a>
+    </div>
+    <div class=job>
+      <span class=date>1998-2003</span> <a href="#job9">Syanterra - neue Medien GbR</a>
+    </div>
+  </div>
+
+  <!--
+       ██  ██████  ██████  ███████
+       ██ ██    ██ ██   ██ ██
+       ██ ██    ██ ██████  ███████
+  ██   ██ ██    ██ ██   ██      ██
+   █████   ██████  ██████  ███████
+  -->
+
+  <div class="slide job" id="job0">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2014-2019</span> <h4>Sebastian Glaser, Monheim am Rhein</h4>
+    <subscript>Development, Consulting, Research</subscript>
+    <subscript>Self-employed</subscript>
+    <subscript>
+      <a href="https://github.com/hakt0r/bundinha/">bundinha</a>,
+      <a href="https://github.com/hakt0r/node-tagscale/">tagscale</a>,
+      <a href="https://github.com/hakt0r/gear0x/">gear0x</a>,
+      <a href="https://github.com/hakt0r/usplash/">usplash</a>,
+      <a href="https://nuu.hakt0r.de/">nuu</a>
+    </subscript>
+  </div>
+
+  <div class="slide job" id="job1">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2018-2019</span> <h4>kasualevents, Monheim am Rhein</h4>
+    <subscript>Chief Technology Officer / Architect</subscript>
+    <subscript>Start-up</subscript>
+    <subscript>
+      <a href="https://tix.kasualevents.de">tix</a>
+    </subscript>
+  </div>
+
+  <div class="slide job" id="job2">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2007-2014</span> <h4>hakt0r root services, Bonn</h4>
+    <subscript>Software Developer / Hosting / Consulting</subscript>
+    <subscript>Self-employed</subscript>
+    <ul>
+        <li/>Mobile Apps (Java, Objective-C and WebApps/Bundles)
+        <li/>Database-solutions (SQL, noSQL, KV-storages, in-memory)
+        <li/>Webhosting- and management (multistack, PHP, nodeJS, Ruby, perl, python)
+        <li/>Performance and security analysis of IT-solutions
+        <li/>Survey reports and consulting (IT-security, postmortem, vendor-offers)
+    </ul>
+  </div>
+
+  <div class="slide job" id="job3">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2011-2012</span> <h4>Taktsoft GmbH, Bonn</h4>
+    <subscript>Software Developer, Senior (RUBY,LAMP,JS)</subscript>
+    <subscript>Sofware-vendor, specializing in web-solutions</subscript>
+    <ul>
+        <li/>Solo: PHP/XSLT/JS based CRM (for Artegic AG, Bonn)
+        <li/>Ticket-terminator RubyOnRails, CSS, JS
+    </ul>
+  </div>
+
+  <div class="slide job" id="job4">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2009-2011</span> <h4>CBT, Bonn</h4>
+    <subscript>Software Developer, Senior / Integration / Reverse</subscript>
+    <subscript>Medical laboratory</subscript>
+    <ul>
+        <li/>Centrum für Blutgerinnungstörungen und Transfusionsmedizin
+        <li/>IT-Security
+        <li/>Systems-integration
+        <li/>InHouse development (C/C++, REALbasic, haXe)
+        <li/>Reverse-engineering of protocols related to medical diagnostic equipment
+        <li/>Auditing and recommending software for production use
+    </ul>
+  </div>
+
+  <div class="slide job" id="job5">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2008</span> <h4>xtivate, Ilmenau</h4>
+    <subscript>Software Developer, Senior (LAMP)</subscript>
+    <subscript>Onlineshop for networking und storage solutions</subscript>
+  </div>
+
+  <div class="slide job" id="job6">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2007</span> <h4>Hundertelf GmbH, Cologne</h4>
+    <subscript>Software Developer, Senior (LAMP) / Consultant</subscript>
+    <subscript>Media and internet agency</subscript>
+  </div>
+
+  <div class="slide job" id="job7">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2005-2007</span> <h4>GRAVIS Store, Bonn</h4>
+    <subscript>Sales and Service</subscript>
+    <subscript>GRAVIS Computervertriebs GmbH, Berlin</subscript>
+    <ul>
+      <li/>Professional sales and consulting
+      <li/>Technical support and service
+    </ul>
+  </div>
+
+  <div class="slide job" id="job8">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>2000-2003</span> <h4>Axel Isensee, Sankt Augustin</h4>
+    <subscript>Software Developer, Junior / Designer</subscript>
+    <subscript>Websites, Design und Promotion</subscript>
+  </div>
+
+  <div class="slide job" id="job9">
+    <a class=prev href="#history"><i class="fa fa-arrow-left"></i></a>
+    <span class=date>1998-2003</span> <h4>Syanterra - neue Medien GbR</h4>
+    <subscript>Software Developer, Junior / Designer / Security</subscript>
+    <subscript>Self-employed</subscript>
+    <ul>
+        <li/>Websites (small-business, hotels, local newspapers, service industry)
+        <li/>Applications (databases, unique solutions)
+        <li/>Design &amp; desktop-publishing (promotion, books, corporate-design)
+        <li/>Security related contributions to Perl and PHP
+    </ul>
+  </div>
+
+  <!--
+   ██████  ██████  ███    ██ ████████  █████   ██████ ████████
+  ██      ██    ██ ████   ██    ██    ██   ██ ██         ██
+  ██      ██    ██ ██ ██  ██    ██    ███████ ██         ██
+  ██      ██    ██ ██  ██ ██    ██    ██   ██ ██         ██
+   ██████  ██████  ██   ████    ██    ██   ██  ██████    ██
+  -->
+
+  <div class=slide id=contact>
+    <a class=next href="#history"><i class="fa fa-arrow-left"></i></a>
+    <h4>contact</h4>
+    <div class="flex_row">
+      <div class="flex_left">
+        <p><b><a href="https://github.com/hakt0r">GitHub</a></b> <a href="https://github.com/hakt0r" class=label><i class="fab fa-github"></i></a> </p>
+        <p><b><a href="https://www.xing.com/profile/Sebastian_Glaser22">XING</a></b> <a href="https://www.xing.com/profile/Sebastian_Glaser22" class=label><i class="fab fa-xing"></i></a> </p>
+        <p><b><a href="https://www.linkedin.com/in/sebastian-glaser-694753190/">LinkedIn</a></b> <a href="https://www.linkedin.com/in/sebastian-glaser-694753190/" class=label><i class="fab fa-linkedin"></i></a> </p>
+        <p><b>Brandenburger Allee 2<br>40789 Monheim am Rhein</b> <span class="label double"><i class="fa fa-home"></i></span></p>
+      </div>
+      <div class="flex_right">
+        <p><a href="xmpp:anx@ulzq.de" class=label><i class="fa fa-comment-alt"></i></a> <b><a href="xmpp:anx@ulzq.de">anx@ulzq.de</a> (xmpp)</b></p>
+        <p><a href="mailto:glaser@hktr.de" class=label><i class="fa fa-envelope-open-text"></i></a> <b><a href="mailto:glaser@hktr.de">glaser@hktr.de</a></b></p>
+        <p><a href="./glaser@hktr.de.pem" class=label><i class="fa fa-user-secret"></i></a>         <b><a href="./glaser@hktr.de.pem">33E3 C4B0 B81D 0A47</a></b></p>
+        <p><a href="tel:004915773485224" class=label><i class="fa fa-mobile"></i></a>             <b><a href="tel:004915773485224">+49 (1577) 34 85 224</a></b></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

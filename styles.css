@@ -1,0 +1,740 @@
+
+*
+{
+    font-family: 'Nunito', sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+
+    color: white;
+
+    --bg-l: rgb(127, 190, 255); /* var(--bg-l) */
+    --bg-m: rgb(8, 65, 100); /* var(--bg-m) */
+    --bg-d: rgb(2, 49, 140); /* var(--bg-d) */
+    --brdc: rgb(7, 79, 216); /* var(--brdc) */
+    --fg-d: rgba(38,    1,   1, 1); /* var(--fg-d) */
+}
+
+@keyframes longBlurIn
+{
+    0%
+    {
+        overflow: hidden; filter: blur(100px);
+    }
+    50%
+    {
+        overflow: hidden; filter: blur(100px);
+    }
+    75%
+    {
+        overflow: hidden; filter: blur(3.0px);
+    }
+    100%
+    {
+        overflow: hidden; filter: blur(0px);
+    }
+}
+
+body
+{
+    font-size: 20px;
+
+    position: relative;
+
+    margin-top: 3em;
+
+    background: var(--bg-d);
+}
+
+/* Responsive font size */
+
+@media ( max-width:900px )
+{
+    body
+    {
+        font-size: 16px;
+    }
+}
+@media ( max-width:800px )
+{
+    body
+    {
+        font-size: 14px;
+    }
+}
+@media ( max-width:700px )
+{
+    body
+    {
+        font-size: 12px;
+    }
+}
+@media ( max-width:600px )
+{
+    body
+    {
+        font-size: 10px;
+    }
+}
+
+/*
+ ██████  ███████ ███    ██ ███████ ██████  ██  ██████     ███████ ████████ ██    ██ ██      ███████ ███████
+██       ██      ████   ██ ██      ██   ██ ██ ██          ██         ██     ██  ██  ██      ██      ██
+██   ███ █████   ██ ██  ██ █████   ██████  ██ ██          ███████    ██      ████   ██      █████   ███████
+██    ██ ██      ██  ██ ██ ██      ██   ██ ██ ██               ██    ██       ██    ██      ██           ██
+ ██████  ███████ ██   ████ ███████ ██   ██ ██  ██████     ███████    ██       ██    ███████ ███████ ███████
+
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    text-align: center;
+    text-transform: lowercase;
+
+    text-shadow: rgba(31, 78, 207, .82) 0 0 .2em;
+}
+
+h1
+{
+    font-size: 350%;
+    line-height: 1em;
+
+    padding: 0 0 0 0;
+
+    flex: 1;
+}
+
+h1 sub
+{font-size: 50%;
+
+    display: block;overflow-wrap: break-word;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    line-height: 2em;
+
+    padding: 0 0 .5em 0;
+}
+
+h4
+{
+    font-size: 200%;
+
+    width: 100%;
+}
+
+a,
+a:link,
+a:visited
+{font-weight: bold;
+
+    text-decoration: none; color: var(--bg-l);
+}
+a:hover,
+a:active,
+a.active
+{
+    color: white;background: #223e8b;
+}
+
+.dim {
+  opacity: 0.5;
+}
+
+/*
+  ██  ██████  ██████  ███    ██     ██       █████  ██████  ███████ ██      ███████
+  ██ ██      ██    ██ ████   ██     ██      ██   ██ ██   ██ ██      ██      ██
+  ██ ██      ██    ██ ██ ██  ██     ██      ███████ ██████  █████   ██      ███████
+  ██ ██      ██    ██ ██  ██ ██     ██      ██   ██ ██   ██ ██      ██           ██
+  ██  ██████  ██████  ██   ████     ███████ ██   ██ ██████  ███████ ███████ ███████
+*/
+
+.label
+{
+    line-height: 1.5em;
+
+    display: inline-block;
+
+    width: 3ch;
+    margin-bottom: .1em;
+    padding: .3em;
+
+    text-align: center;
+    vertical-align: top;
+
+    border-radius: .3em;
+    background: rgba(0, 0, 0, .25);
+}
+
+.label.double
+{
+    line-height: 2.5em;
+}
+
+.label:before
+{
+    float: left;
+}
+
+.label i
+{
+    text-align: center;
+}
+
+/*
+  ██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████
+  ██   ██ ██   ██ ██      ██  ██  ██       ██   ██ ██    ██ ██    ██ ████   ██ ██   ██
+  ██████  ███████ ██      █████   ██   ███ ██████  ██    ██ ██    ██ ██ ██  ██ ██   ██
+  ██   ██ ██   ██ ██      ██  ██  ██    ██ ██   ██ ██    ██ ██    ██ ██  ██ ██ ██   ██
+  ██████  ██   ██  ██████ ██   ██  ██████  ██   ██  ██████   ██████  ██   ████ ██████
+*/
+
+#background,
+#background_more
+{
+    position: fixed; top: 50%;left: 50%;
+
+    width: 200%;
+
+    user-select: none; pointer-events: none;
+
+    opacity: .05;
+}
+
+#background
+{
+    transform: rotate3d(1,1,1,-20deg)  translate(-50%,-50%);
+    animation: floatAround 300s infinite linear;;
+}
+
+#background_more
+{
+    transform: rotate3d(1,1,1,20deg)  translate(-50%,-50%);
+    animation: floatAroundMore 300s infinite linear;;
+}
+
+@keyframes floatAround
+{
+    25%
+    {
+        transform: rotate3d(1,1,1,20deg) translate(-55%,-45%);
+    }
+    75%
+    {
+        transform: rotate3d(1,1,1,-40deg) translate(-45%,-55%);
+    }
+}
+
+@keyframes floatAroundMore
+{
+    25%
+    {
+        transform: rotate3d(1,1,1,-20deg) translate(-55%,-45%);
+    }
+    75%
+    {
+        transform: rotate3d(1,1,1,40deg) translate(-45%,-55%);
+    }
+}
+
+/*
+  ███    ██  █████  ██    ██ ██  ██████   █████  ████████ ██  ██████  ███    ██
+  ████   ██ ██   ██ ██    ██ ██ ██       ██   ██    ██    ██ ██    ██ ████   ██
+  ██ ██  ██ ███████ ██    ██ ██ ██   ███ ███████    ██    ██ ██    ██ ██ ██  ██
+  ██  ██ ██ ██   ██  ██  ██  ██ ██    ██ ██   ██    ██    ██ ██    ██ ██  ██ ██
+  ██   ████ ██   ██   ████   ██  ██████  ██   ██    ██    ██  ██████  ██   ████
+*/
+
+nav
+{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 2.2em;
+    margin: 0;
+    padding: .5rem;
+
+    text-align: center;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+nav a
+{
+    line-height: 2em;
+
+    position: relative;
+
+    display: inline-block;
+
+    height: 2em;
+    margin: 1vw;
+    margin-top: 2em;
+    padding: 0 1.2em;
+
+    border-radius: .2em;
+    box-shadow: inset #00033 0 0 .3em 0;
+}
+
+nav a:hover
+{
+    background: rgba(0,0,0,.1);
+}
+
+nav a:active
+{
+    background: rgba(0,0,0,.2);
+}
+nav a:target
+{
+    background: rgba(0,0,0,.2);
+}
+
+nav ul
+{display: inline-block;width: auto;
+
+    list-style-type: square;border-radius: .5em;background: #223d8859;
+}
+nav ul li
+{
+    display: inline-block;
+}
+nav ul li a
+{
+    color: none;
+}
+nav ul li a:hover
+{
+    color: white;
+}
+nav a
+{
+    margin: 1vw;
+}
+
+/*
+  The navigation arrows
+*/
+
+a.next,
+a.prev
+{
+    position: sticky;
+    z-index: 1000;
+    bottom: .2em;
+
+    display: none;
+
+    width: 2ch;
+    height: 2ch;
+    padding: .3em .6em;
+
+    border-radius: .3em;
+    background: #223e8bdb;
+}
+
+a.next
+{
+    top: 0;
+}
+a.prev
+{
+    top: 0;
+}
+
+
+/*
+  ███████  ██████ ██████   ██████  ██      ██      ██████   █████  ██████
+  ██      ██      ██   ██ ██    ██ ██      ██      ██   ██ ██   ██ ██   ██
+  ███████ ██      ██████  ██    ██ ██      ██      ██████  ███████ ██████
+       ██ ██      ██   ██ ██    ██ ██      ██      ██   ██ ██   ██ ██   ██
+  ███████  ██████ ██   ██  ██████  ███████ ███████ ██████  ██   ██ ██   ██
+*/
+
+::-webkit-scrollbar
+{
+    width: 1em;
+}
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+::-webkit-scrollbar-thumb
+{
+    outline: 1px solid #01101e;
+    background-color: #081c54;
+}
+
+/*
+  ███████ ██   ██ ██ ██      ██      ███████
+  ██      ██  ██  ██ ██      ██      ██
+  ███████ █████   ██ ██      ██      ███████
+       ██ ██  ██  ██ ██      ██           ██
+  ███████ ██   ██ ██ ███████ ███████ ███████
+
+  Custom SKILL tag
+  Example of a custom HTML-Element
+   this abuses the s-tag to add
+   a new attribute 'value' ranging
+   from 0 to 5
+*/
+skills
+{position: relative;margin-bottom: 1em;padding: 1vw;border-radius: 1em;
+
+    flex: auto;flex-shrink: 3;
+}
+.full
+{
+    flex-basis: 100%;/* height: 0; */flex-shrink: 3;
+}
+skills s
+{position: relative;
+
+    display: block;padding: 0;text-align: center; text-decoration: none;
+}
+skills s:before
+{font-size: 50%;
+
+    display: block      ;color: rgba(0,0,0,.7); color: white;
+}
+skills s[value='5']:before
+{
+    content: '⚫⚫⚫⚫⚫'; animation: aniS5 .5s 1 .5s;
+}
+skills s[value='4']:before
+{
+    content: '⚫⚫⚫⚫⚪'; animation: aniS4 .5s 1 .5s;
+}
+skills s[value='3']:before
+{
+    content: '⚫⚫⚫⚪⚪'; animation: aniS3 .5s 1 .5s;
+}
+skills s[value='2']:before
+{
+    content: '⚫⚫⚪⚪⚪'; animation: aniS2 .5s 1 .5s;
+}
+skills s[value='1']:before
+{
+    content: '⚫⚪⚪⚪⚪'; animation: aniS1 .5s 1 .5s;
+}
+@keyframes aniS5
+{
+    0%
+    {
+        content: '⚪⚪⚪⚪⚪';
+    } 20%
+    {
+        content: '⚫⚪⚪⚪⚪';
+    } 40%
+    {
+        content: '⚫⚫⚪⚪⚪';
+    } 60%
+    {
+        content: '⚫⚫⚫⚪⚪';
+    } 80%
+    {
+        content: '⚫⚫⚫⚫⚪';
+    } 100%
+    {
+        content: '⚫⚫⚫⚫⚫';
+    }
+}
+@keyframes aniS4
+{
+    0%
+    {
+        content: '⚪⚪⚪⚪⚪';
+    } 20%
+    {
+        content: '⚫⚪⚪⚪⚪';
+    } 40%
+    {
+        content: '⚫⚫⚪⚪⚪';
+    } 60%
+    {
+        content: '⚫⚫⚫⚪⚪';
+    } 80%
+    {
+        content: '⚫⚫⚫⚫⚪';
+    }
+}
+@keyframes aniS3
+{
+    0%
+    {
+        content: '⚪⚪⚪⚪⚪';
+    } 20%
+    {
+        content: '⚫⚪⚪⚪⚪';
+    } 40%
+    {
+        content: '⚫⚫⚪⚪⚪';
+    } 60%
+    {
+        content: '⚫⚫⚫⚪⚪';
+    }
+}
+@keyframes aniS2
+{
+    0%
+    {
+        content: '⚪⚪⚪⚪⚪';
+    } 20%
+    {
+        content: '⚫⚪⚪⚪⚪';
+    } 40%
+    {
+        content: '⚫⚫⚪⚪⚪';
+    }
+}
+@keyframes aniS1
+{
+    0%
+    {
+        content: '⚪⚪⚪⚪⚪';
+    } 20%
+    {
+        content: '⚫⚪⚪⚪⚪';
+    }
+}
+skills.block
+{
+    display: block; padding: .1em 0 0 0;
+}
+
+.flex_row b
+{
+    display: inline-block;vertical-align: middle;
+}
+
+/* Exception for the @overview page, here we have left alignment */
+#overview skills s
+{position: relative;
+
+    display: block;padding: 0 0 0 4.8ch;text-align: left;text-decoration: none;
+}
+#overview skills s:before
+{position: absolute;top: .6em;left: 1ch;
+
+    display: inline;color: rgba(0,0,0,.7);color: white;
+}
+
+skills b
+{
+    font-weight: normal;
+
+    display: inline-block;
+
+    margin-bottom: .2em;
+    padding: .1em .4em;
+
+    vertical-align: middle;
+    white-space: nowrap;
+    word-break: keep-all;
+
+    border-radius: .2rem;
+    background-color: rgba(0,0,0,.1);
+}
+
+/*
+  ███████ ██      ██ ██████  ███████ ███████
+  ██      ██      ██ ██   ██ ██      ██
+  ███████ ██      ██ ██   ██ █████   ███████
+       ██ ██      ██ ██   ██ ██           ██
+  ███████ ███████ ██ ██████  ███████ ███████
+*/
+
+.slide
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: none;
+    overflow: hidden auto;
+
+    padding: 10vh 5vw 5vh 5vw;
+
+    animation: blurIn 1s 1;
+
+    background: #4500ff12;
+
+    flex-flow: wrap;
+    filter: blur(100px);
+}
+
+@keyframes blurIn
+{
+    0%
+    {
+        filter: blur(100px);
+    }
+    50%
+    {
+        filter: blur(3.0px);
+    }
+    100%
+    {
+        filter: blur(0px);
+    }
+}
+
+#overview,
+#contact,
+#history
+{
+    flex-flow: column;
+}
+
+.personal
+{
+    display: flex; flex-flow: wrap;
+}
+.personal span,
+.personal h2
+{
+    flex: calc( 50% - 2ch );
+}
+.personal span
+{display: inline-grid; padding: 1vw; text-align: right;
+
+    flex: calc( 50% - 2ch );
+}
+.personal span.right
+{
+    display: inline-grid; text-align: left;
+}
+.personal h4
+{
+    text-align: right;
+}
+.personal .right h4
+{
+    text-align: left;
+}
+.private
+{
+    display: none !important;
+}
+.slide li
+{
+    margin-top: 1.5em;
+}
+
+#person p
+{
+    font-size: 150%;position: relative;left: 50%;max-width: 60ch;margin-top: .5em;transform: translate(-50%,0);text-align: justify;
+}
+
+.job
+{
+    position: relative;
+    text-align: center;
+    flex: 100%;
+}
+
+.job .date
+{
+    position: absolute;
+    top: 1em;
+    left: 50%;
+
+    transform: translate(-50%,0);
+
+    opacity: .5;
+}
+
+.slide.job {
+  position: fixed;
+}
+
+.slide.job .date
+{
+  position: relative;
+  margin-top: 1em;
+  left: unset;}
+
+.slide.job:target
+{
+    display: block;
+}
+.slide.job subscript
+{
+    display: block;
+}
+.slide.job ul
+{
+    margin-top: 1em; list-style-type: none;
+}
+.slide.job li
+{
+    margin-top: unset;
+}
+
+.slide:target
+{
+    display: flex;
+
+    filter: blur(0px);
+}
+
+/* FLEX FORMATS
+*/
+
+.flex_row ul li
+{
+    list-style-type: none;
+}
+.flex_row
+{
+    display: flex;flex: 100%;
+}
+.flex_row > *
+{padding: 1vw;
+
+    flex: calc( 50% - 2ch );
+}
+.flex_left
+{
+    text-align: right;
+}
+.flex_left h4
+{
+    text-align: right;
+}
+.flex_right h4
+{
+    text-align: left;
+}
+.flex_row p
+{
+    position: relative;margin-top: .3em;
+}
+.flex_row p b
+{
+    position: absolute; top: 50%;
+}
+.flex_left p b
+{
+    right: 5ch;transform: translate(0,-50%);
+}
+.flex_right p b
+{
+    left: 5ch;transform: translate(0,-50%);
+}

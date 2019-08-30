@@ -1,4 +1,15 @@
 
+#hireme {
+  position: fixed;
+  left: 2em;
+  top: 3em;
+  transform: rotate(-45deg);
+  background: #ffa500e8;
+  border: dotted 0.2em white;
+  color: black;
+  padding: 0.5em;
+}
+
 *
 {
     font-family: 'Nunito', sans-serif;

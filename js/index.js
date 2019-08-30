@@ -9,9 +9,16 @@ function hashChange(){
     newItem = document.querySelector(`a.navi[href="#history"]`)
   }
   newItem.classList.add('active')
+  if ( window.location.hash == '#overview')
+       document.querySelector('.prev').classList.add('disabled')
+  else document.querySelector('.prev').classList.remove('disabled')
+  if ( window.location.hash == '#contact')
+       document.querySelector('.next').classList.add('disabled')
+  else document.querySelector('.next').classList.remove('disabled')
 }
 
 function nextSlide() {
+  if ( window.location.hash == '#contact') return
   var list   = Array.from(document.querySelectorAll("a.navi"))
   var active = document.querySelector("a.navi.active")
   var index  = list.indexOf(active)
@@ -22,6 +29,7 @@ function nextSlide() {
 }
 
 function prevSlide() {
+  if ( window.location.hash == '#overview') return
   if ( window.location.hash.match(/job/) ){
     window.location = '#history'
     return
@@ -43,6 +51,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelector('.prev').addEventListener('click',prevSlide)
   document.querySelector('.next').addEventListener('click',nextSlide)
   document.addEventListener('keydown',(e)=>{
-    if (e.key == 'space') nextSlide()
+    console.log(e);
+    if (e.key == ' ')          nextSlide()
+    if (e.key == 'ArrowRight') nextSlide()
+    if (e.key == 'ArrowLeft')  prevSlide()
   })
 })

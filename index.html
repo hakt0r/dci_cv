@@ -6,14 +6,6 @@
   <link rel="stylesheet" href="styles.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/346e7f28b3.js"></script>
-  <script>
-    if ( ! window.location.toString().match('#') ){ window.location = window.location + '#overview' }
-    window.addEventListener('hashchange',()=>{
-      document.querySelector('.active').classList.remove('active')
-      console.log(`li a[href="${window.location.hash}"]`);
-      document.querySelector(`li a[href="${window.location.hash}"]`).classList.add('active')
-    })
-  </script>
 </head>
 <body>
   <img id="background_more" src="img/more.png">
@@ -21,12 +13,12 @@
 
   <nav>
     <ul>
-      <li><a class=active href="#overview">Home</a></li>
-      <li><a href="#person">Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#dev">Dev</a></li>
-      <li><a href="#history">History</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a title="home" class=active href="#overview"><i class="fa fa-home"></i></a></li>
+      <li><a title="about me" href="#person"><i class="fa fa-user"></i></a></li>
+      <li><a title="skills" href="#skills"><i class="fa fa-dumbbell"></i></a></li>
+      <li><a title="development" href="#dev"><i class="fa fa-code"></i></a></li>
+      <li><a title="history" href="#history"><i class="fa fa-history"></i></a></li>
+      <li><a title="contact" href="#contact"><i class="fa fa-envelope"></i></a></li>
     </ul>
   </nav>
 

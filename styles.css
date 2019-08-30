@@ -12,7 +12,16 @@
 }
 
 #hireme a {
-  color: black;
+  color:black
+}
+
+#hireme a:hover {
+  background:unset;
+  color:white
+}
+
+#hireme:hover {
+  border-color:white
 }
 
 *

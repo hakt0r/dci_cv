@@ -5,14 +5,25 @@
   top: 3em;
   transform: rotate(-45deg);
   background: #ffa500e8;
-  border: dotted 0.2em black;
+  border: 1px #ffa500e8 solid;
   color: black;
   padding: 0.5em;
   z-index: 2000;
+  box-shadow: inset black 0.1ch 0.1ch 1ch 0.1ch;
+  filter: drop-shadow(0.1ch 0.1ch 0.5ch black);
+  animation: shadowMorph 1s infinite;
+  border-radius: 1ch;
+}
+
+@keyframes shadowMorph {
+    0% { filter: drop-shadow(0.1ch 0.1ch 0.5ch black); }
+   50% { filter: drop-shadow(0.1ch 0.1ch 0.8ch black); }
+  100% { filter: drop-shadow(0.1ch 0.1ch 0.5ch black); }
 }
 
 #hireme a {
-  color:black
+  color:black;
+  text-shadow: #0e2a7b 1px 1px 4px;
 }
 
 #hireme a:hover {
@@ -71,28 +82,28 @@ body
 
 /* Responsive font size */
 
-@media ( max-width:900px )
+@media ( screen ) and ( max-width:900px )
 {
     body
     {
         font-size: 16px;
     }
 }
-@media ( max-width:800px )
+@media ( screen ) and ( max-width:800px )
 {
     body
     {
         font-size: 14px;
     }
 }
-@media ( max-width:700px )
+@media ( screen ) and ( max-width:700px )
 {
     body
     {
         font-size: 12px;
     }
 }
-@media ( max-width:600px )
+@media ( screen ) and ( max-width:600px )
 {
     body
     {
@@ -398,118 +409,84 @@ skills
 }
 .full
 {
-    flex-basis: 100%;/* height: 0; */flex-shrink: 3;
+    flex-basis: 100%; flex-shrink: 3;
 }
 skills s
-{position: relative;
-
-    display: block;padding: 0;text-align: center; text-decoration: none;
-}
+{
+  position: relative;display: block;padding: 0;text-align: left;text-decoration: none;margin-left: 8ch;}
 skills s:before
-{font-size: 50%;
+{  border: solid 1px #3a6fda;
 
-    display: block      ;color: rgba(0,0,0,.7); color: white;
+    content: ' ';
+    animation: aniS5 .5s 1 .5s;
+    width: 8ch;
+    height: 1em;
+    display: inline-block;
+    border-radius: 0.5em;
+    vertical-align: text-top;
+    margin-left: -8.8ch;
 }
 skills s[value='5']:before
 {
-    content: '⚫⚫⚫⚫⚫'; animation: aniS5 .5s 1 .5s;
+    content: ' '; animation: aniS5 .15s 1 .5s;
+    background: linear-gradient(90deg, #0d297a, #92aaf3);
 }
 skills s[value='4']:before
 {
-    content: '⚫⚫⚫⚫⚪'; animation: aniS4 .5s 1 .5s;
+    content: ' '; animation: aniS4 .15s 1 .5s;
+    background: linear-gradient(90deg, #0d297a, #92aaf3 80%,  #0b267500 85%);
 }
 skills s[value='3']:before
 {
-    content: '⚫⚫⚫⚪⚪'; animation: aniS3 .5s 1 .5s;
+    content: ' '; animation: aniS3 .15s 1 .5s;
+    background: linear-gradient(90deg, #0d297a, #92aaf3 60%,  #0b267500 65%);
 }
 skills s[value='2']:before
 {
-    content: '⚫⚫⚪⚪⚪'; animation: aniS2 .5s 1 .5s;
+    content: ' '; animation: aniS2 .15s 1 .5s;
+    background: linear-gradient(90deg, #0d297a, #92aaf3 40%,  #0b267500 45%);
 }
 skills s[value='1']:before
 {
-    content: '⚫⚪⚪⚪⚪'; animation: aniS1 .5s 1 .5s;
+    content: ' '; animation: aniS1 .15s 1 .5s;
+    background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%);
 }
-@keyframes aniS5
-{
-    0%
-    {
-        content: '⚪⚪⚪⚪⚪';
-    } 20%
-    {
-        content: '⚫⚪⚪⚪⚪';
-    } 40%
-    {
-        content: '⚫⚫⚪⚪⚪';
-    } 60%
-    {
-        content: '⚫⚫⚫⚪⚪';
-    } 80%
-    {
-        content: '⚫⚫⚫⚫⚪';
-    } 100%
-    {
-        content: '⚫⚫⚫⚫⚫';
-    }
+
+@keyframes aniS5 {
+      0%  { background: linear-gradient(90deg, #0d297a, #92aaf3 0%,   #0b267500 5%); }
+     20%  { background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%); }
+     40%  { background: linear-gradient(90deg, #0d297a, #92aaf3 40%,  #0b267500 45%); }
+     60%  { background: linear-gradient(90deg, #0d297a, #92aaf3 60%,  #0b267500 65%); }
+     80%  { background: linear-gradient(90deg, #0d297a, #92aaf3 80%,  #0b267500 85%); }
+    100%  { background: linear-gradient(90deg, #0d297a, #92aaf3 ); }
 }
-@keyframes aniS4
-{
-    0%
-    {
-        content: '⚪⚪⚪⚪⚪';
-    } 20%
-    {
-        content: '⚫⚪⚪⚪⚪';
-    } 40%
-    {
-        content: '⚫⚫⚪⚪⚪';
-    } 60%
-    {
-        content: '⚫⚫⚫⚪⚪';
-    } 80%
-    {
-        content: '⚫⚫⚫⚫⚪';
-    }
+
+@keyframes aniS4 {
+      0%  { background: linear-gradient(90deg, #0d297a, #92aaf3 0%,   #0b267500 5%); }
+     20%  { background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%); }
+     40%  { background: linear-gradient(90deg, #0d297a, #92aaf3 40%,  #0b267500 45%); }
+     60%  { background: linear-gradient(90deg, #0d297a, #92aaf3 60%,  #0b267500 65%); }
+     80%  { background: linear-gradient(90deg, #0d297a, #92aaf3 80%,  #0b267500 85%); }
 }
-@keyframes aniS3
-{
-    0%
-    {
-        content: '⚪⚪⚪⚪⚪';
-    } 20%
-    {
-        content: '⚫⚪⚪⚪⚪';
-    } 40%
-    {
-        content: '⚫⚫⚪⚪⚪';
-    } 60%
-    {
-        content: '⚫⚫⚫⚪⚪';
-    }
+
+@keyframes aniS3 {
+      0%  { background: linear-gradient(90deg, #0d297a, #92aaf3 0%,   #0b267500 5%); }
+     20%  { background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%); }
+     40%  { background: linear-gradient(90deg, #0d297a, #92aaf3 40%,  #0b267500 45%); }
+     60%  { background: linear-gradient(90deg, #0d297a, #92aaf3 60%,  #0b267500 65%); }
 }
-@keyframes aniS2
-{
-    0%
-    {
-        content: '⚪⚪⚪⚪⚪';
-    } 20%
-    {
-        content: '⚫⚪⚪⚪⚪';
-    } 40%
-    {
-        content: '⚫⚫⚪⚪⚪';
-    }
+
+@keyframes aniS2 {
+      0%  { background: linear-gradient(90deg, #0d297a, #92aaf3 0%,   #0b267500 5%); }
+     20%  { background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%); }
+     40%  { background: linear-gradient(90deg, #0d297a, #92aaf3 40%,  #0b267500 45%); }
 }
-@keyframes aniS1
-{
-    0%
-    {
-        content: '⚪⚪⚪⚪⚪';
-    } 20%
-    {
-        content: '⚫⚪⚪⚪⚪';
-    }
+
+@keyframes aniS1 {
+      0%  { background: linear-gradient(90deg, #0d297a, #92aaf3 0%,   #0b267500 5%); }
+     20%  { background: linear-gradient(90deg, #0d297a, #92aaf3 20%,  #0b267500 25%); }
 }
+
 skills.block
 {
     display: block; padding: .1em 0 0 0;
@@ -522,15 +499,19 @@ skills.block
 
 /* Exception for the @overview page, here we have left alignment */
 #overview skills s
-{position: relative;
-
-    display: block;padding: 0 0 0 4.8ch;text-align: left;text-decoration: none;
+{
+  position: relative;
+  display: block;
+  text-align: left;
+  text-decoration: none;
 }
-#overview skills s:before
-{position: absolute;top: .6em;left: 1ch;
 
-    display: inline;color: rgba(0,0,0,.7);color: white;
-}
+#overview skills s:before {
+  position: absolute;
+  top: 0.2em;
+  left: 1ch;
+  display: inline;
+ }
 
 skills b
 {
@@ -568,7 +549,7 @@ skills b
     display: none;
     overflow: hidden auto;
 
-    padding: 10vh 5vw 5vh 5vw;
+    padding: 13vh 5vw 5vh 5vw;
 
     animation: blurIn 1s 1;
 
@@ -578,20 +559,16 @@ skills b
     filter: blur(100px);
 }
 
-@keyframes blurIn
-{
-    0%
-    {
-        filter: blur(100px);
-    }
-    50%
-    {
-        filter: blur(3.0px);
-    }
-    100%
-    {
-        filter: blur(0px);
-    }
+@keyframes blurIn {
+  0% {
+    filter: blur(100px);
+  }
+  50% {
+    filter: blur(3.0px);
+  }
+  100% {
+    filter: blur(0px);
+  }
 }
 
 #overview,
@@ -689,7 +666,6 @@ skills b
 .slide:target
 {
     display: flex;
-
     filter: blur(0px);
 }
 
@@ -736,4 +712,122 @@ skills b
 .flex_right p b
 {
     left: 5ch;transform: translate(0,-50%);
+}
+
+span.city {
+  display: none;
+}
+
+/*
+██████  ██   ██  ██████  ████████  ██████
+██   ██ ██   ██ ██    ██    ██    ██    ██
+██████  ███████ ██    ██    ██    ██    ██
+██      ██   ██ ██    ██    ██    ██    ██
+██      ██   ██  ██████     ██     ██████
+*/
+
+.photofloat {float:left;clear:both;display:inline-block;height: 1.367em; }
+#photof1 {width: 14ch;}
+#photof2 {width: 13.7ch;}
+#photof3 {width: 13.4ch;}
+#photof4 {width: 13.1ch;}
+#photof5 {width: 12.8ch;}
+#photof6 {width: 12.5ch;}
+
+#photo {
+  height: 7em;
+  display: inline-block;
+  position: absolute;
+  left:-2ch; top:0;
+  transform: rotate(4deg);
+  border: solid white 0.4ch;
+  box-shadow: #00000066 0.1ch 0.1ch 0.2ch 0.1ch;
+  margin-left: 1ch;
+}
+
+/*
+██████  ██████  ██ ███    ██ ████████
+██   ██ ██   ██ ██ ████   ██    ██
+██████  ██████  ██ ██ ██  ██    ██
+██      ██   ██ ██ ██  ██ ██    ██
+██      ██   ██ ██ ██   ████    ██
+*/
+
+@media print {
+  body {
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    float: none;
+    font-size:4mm;
+  }
+  #hireme { display: none }
+  nav { display: none }
+  #background { animation: unset; transform: rotate3d(1,1,1,20deg) translate(-55%,-45%); }
+  #background_more { animation: unset; transform: rotate3d(1,1,1,-20deg) translate(-55%,-45%); }
+  .slide {
+    filter: unset;
+    display: block;
+    position: relative;
+    animation: unset;
+    top:unset;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  #person, #skills, #code, #dev {
+    display: flex;
+  }
+  #overview { font-size: 130%; padding-bottom: 0; }
+  h1 { margin-top: 20mm }
+  #history {width: auto;position: absolute;right:0;top: 19em;left: unset;display: block;background: #0000001f;padding: 1ch 2.5ch;height: fit-content;border-radius: 1ch;}
+  #history .job {
+    line-height: 2em;
+    height: 2.4em;
+    text-align: left;
+    }
+  #historyfloat {
+    float: right;
+    width: 41%;
+    height: 22em;
+    clear:both;
+    margin-left: 2ch;
+  }
+  #history .date {
+    position: unset;
+    display: inline-block;
+    text-align: right;
+    width: 10ch;
+    transform: unset; left:unset; top: unset;
+  }
+  #dev {
+    padding: 0 2em; }
+  skills {
+    display: block;
+    width: 40%;
+    flex: auto;
+  }
+  h4 {
+    line-height: 1.6em;
+    height: 1em;}
+  #page3 h4,
+  #page2 h4 { text-align:left}
+  #overview h4 { padding-top:10mm; margin-top:0}
+  .slide.job { display: none }
+  .page {
+    position: absolute;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+  }
+  #page1 { top: calc( 0 * 297mm ) }
+  #page2 { top: calc( 1 * 297mm ) }
+  #page3 { top: calc( 2 * 297mm ); height:285.5mm; }
+  #page4 { display: none; }
+  span.city {
+    font-size: 80%;
+    opacity: .7;
+    display:block;
+    line-height: 0em;
+    margin-left: 13ch;
+  }
 }
